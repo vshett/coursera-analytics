@@ -30,7 +30,8 @@ activity <- activity$activity_name
 subject <- rbind(subject_train,subject_test)
 colnames(subject) <- c("subject")
 
-tidy_data <- cbind(subject, activity,tidy_data)
-
-return(tidy_data)
+tidy_data1 <- cbind(subject, activity,tidy_data)
+tidy_data2 <- melt(tidy_data1,id =c("subject", "activity"), measure.vars=colnames(tidy_data1[,3:ncol(tidy_data1)]))
+tidy_data2 <- dcast(tidy_data2, subject+activity~variable, mean)
+return(tidy_data2)
 }
