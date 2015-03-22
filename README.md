@@ -1,8 +1,12 @@
 # coursera-analytics
 Program Requirements
+
 1. Requires dplyr and reshape2 packages installed
 2. All data files required for the script should be placed in the working directory
+
 How Script Works?
+
+
 1. Extracts and concatenates training and test sets using rbind function
 2. Next, provides column names to this concatenated data set using the feature text file
 3. Next, using grep function, subsets the mean and std columns
